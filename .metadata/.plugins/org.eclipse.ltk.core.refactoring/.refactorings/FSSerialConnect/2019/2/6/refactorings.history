@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;FSSerialConnect/src/Connect/FSSerialConnect.java&apos; to &apos;SerialComLeitura.java&apos;" description="Rename resource &apos;FSSerialConnect.java&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/Connect/FSSerialConnect.java" name="SerialComLeitura.java" stamp="1549724268145" updateReferences="true"/>
+</session>

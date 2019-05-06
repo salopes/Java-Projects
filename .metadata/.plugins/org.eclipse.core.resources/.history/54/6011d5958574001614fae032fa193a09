@@ -1,0 +1,99 @@
+package Plafond;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import Plafond.Plafond_Estrut;
+import java.util.ArrayList;
+
+public class Plafond {
+
+	public static void main(String[] args){
+		int iControle=0;
+		int iRegControle=0;
+		String codDealer="";
+
+		ArrayList<Plafond_Estrut> plafond_Estrut = new ArrayList<Plafond_Estrut>();
+		
+		try{
+			FileReader fileName = new FileReader("SIG46000_31082016.txt");
+			BufferedReader lerArq = new BufferedReader(fileName);
+			
+			String linha = lerArq.readLine(); // lê a primeira linha
+			
+			while (linha != null) {
+				//System.out.printf(" Linha While [%s]\n", linha);
+				String tpReg = linha.substring(0, 1);
+				if(iControle==0){
+					iControle++;
+					iRegControle++;
+				}
+				
+				if (tpReg.matches("^[0-9]*$")){
+					if(Integer.parseInt(tpReg)!=9){
+						//Registro com FdP
+						if(Integer.parseInt(tpReg)==1){
+							//Registro das FdP
+							Plafond_Estrut SIM = new Plafond_Estrut( codDealer
+																	 , linha.substring(1, 4) 
+	       							                                 , linha.substring(4, 6)
+	       							                                 , linha.substring(11, 14)
+	       							                                 , linha.substring(14, 17)
+	       							                                 , linha.substring(17, 20)
+	       							                                 , linha.substring(20, 23)
+	       							                                 , linha.substring(23, 26)
+	       							                                 , linha.substring(26, 29)
+	       							                                 , linha.substring(29, 32)
+	       							                                 , linha.substring(32, 35)
+	       							                                 , linha.substring(35, 38)
+	       							                                 , linha.substring(38, 41)
+	       							                                 , linha.substring(41, 44)
+	       							                                 , linha.substring(44, 47)
+	       							                                 , linha.substring(47, 50)
+	       							                                 , linha.substring(50, 53)
+	       							                                 , linha.substring(53, 56)
+	       							                                 , linha.substring(56, 59)
+	       							                                 , linha.substring(59, 62)
+	       							                                 , linha.substring(62, 65)
+	       							                                 , linha.substring(65, 68)
+	       							                                 , linha.substring(68, 71)
+	       							                                 , linha.substring(71, 74)
+	       							                                 , linha.substring(74, 77)
+	       							                                 , linha.substring(77, 80)
+	       							                                 , linha.substring(80, 83)
+	       							                                 , linha.substring(83, 86));
+							plafond_Estrut.add(SIM);	
+						}						
+					}
+					else if (Integer.parseInt(linha.substring(0, 2))!=99){
+						//Registro Dealer
+							codDealer = linha.substring(0, 5);
+					}
+				}
+				linha = lerArq.readLine(); // lê da segunda até a última linha
+			} 
+			
+			//Collections.sort(sim05000_ESTRUT);
+
+			FileWriter fileNameOut = new FileWriter("D:\\SIM05000_06092016_3_OUT.txt");
+			PrintWriter gravarArq = new PrintWriter(fileNameOut);
+			
+			//Grava FdP
+			for (Plafond_Estrut SIM : plafond_Estrut){
+				//System.out.println(SIM);
+				gravarArq.printf("%s\n", SIM);
+			}
+			
+			fileName.close();
+			fileNameOut.close();
+		} catch (IOException  e) {
+			e.getMessage();
+			System.err.printf("Erro na abertura do arquivo: %s.\n", e.getMessage());
+		}
+		//System.out.println();
+	}
+
+
+}

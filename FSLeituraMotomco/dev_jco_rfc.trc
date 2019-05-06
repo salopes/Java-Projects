@@ -1,0 +1,53 @@
+
+**** Error file opened at 20190218 145142 Brasilia Time Rel. 3.0.19 (2018-12-03) [721.1120]
+Error:  >Mon Feb 18 14:51:42,220<    RfcException:
+	message: Parameter ABAP application server host ('jco.client.ashost') is missing
+	return code: RFC_INVALID_PARAMETER (19)
+	error group: 101
+	key: RFC_ERROR_PROGRAM
+	at com.sap.conn.rfc.api.RfcOptions.checkParameters(RfcOptions.java:278)
+	at com.sap.conn.jco.rt.MiddlewareJavaRfc$JavaRfcClient.initialize(MiddlewareJavaRfc.java:1319)
+	at com.sap.conn.jco.rt.MiddlewareJavaRfc$JavaRfcClient.connect(MiddlewareJavaRfc.java:1349)
+	at com.sap.conn.jco.rt.ClientConnection.connect(ClientConnection.java:704)
+	at com.sap.conn.jco.rt.PoolingFactory.init(PoolingFactory.java:112)
+	at com.sap.conn.jco.rt.ConnectionManager.createFactory(ConnectionManager.java:433)
+	at com.sap.conn.jco.rt.DefaultConnectionManager.createFactory(DefaultConnectionManager.java:46)
+	at com.sap.conn.jco.rt.ConnectionManager.getFactory(ConnectionManager.java:380)
+	at com.sap.conn.jco.rt.RfcDestination.initialize(RfcDestination.java:974)
+	at com.sap.conn.jco.rt.RfcDestination.getAttributes(RfcDestination.java:651)
+	at com.sap.conn.jco.rt.RfcDestination.getAttributes(RfcDestination.java:33)
+	at Motomco.FSSerialComSAP.conectaSAP(FSSerialComSAP.java:65)
+	at Motomco.FSLeituraMotomco.main(FSLeituraMotomco.java:153)
+
+
+
+**** Error file opened at 20190218 155043 Brasilia Time Rel. 3.0.19 (2018-12-03) [721.1120]
+Error:  >Mon Feb 18 15:50:43,923<    >RfcGetException (rc=7) message: O nome ou a senha não está correto (repetir o logon)
+<RfcGetException
+
+
+
+**** Error file opened at 20190314 143212 Brasilia Time Rel. 3.0.19 (2018-12-03) [721.1120]
+Error:  >Thu Mar 14 14:32:12,895<    RfcException:
+	message: Connect to SAP gateway failed
+Connection parameters: TYPE=A DEST=SAPConf ASHOST=192.168.225.30 SYSNR=00 SAPROUTER=/H/187.72.197.251/W/fsbiotemp PCS=1
+
+LOCATION    CPIC (TCP/IP) on local host with Unicode
+ERROR       partner '187.72.197.251:3299' not reached
+TIME        Thu Mar 14 14:32:11 2019
+RELEASE     721
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -10
+MODULE      nixxi.cpp
+LINE        3289
+DETAIL      NiPConnect2: 187.72.197.251:3299
+SYSTEM CALL connect
+ERRNO       10065
+ERRNO TEXT  WSAEHOSTUNREACH: No route to host
+COUNTER     4
+
+	return code: RFC_FAILURE (1)
+	error group: 102
+	key: RFC_ERROR_COMMUNICATION
+

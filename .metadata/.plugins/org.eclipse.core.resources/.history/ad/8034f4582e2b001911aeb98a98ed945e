@@ -1,0 +1,110 @@
+package Visao;
+
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Shell;
+import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Label;
+import org.eclipse.swt.widgets.Combo;
+import org.eclipse.swt.widgets.Text;
+import org.eclipse.wb.swt.SWTResourceManager;
+import org.eclipse.swt.widgets.Button;
+
+public class SerialFrameView {
+
+	protected Shell shlSerialConnect;
+	private Text textStatus;
+
+	/**
+	 * Launch the application.
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		try {
+			SerialFrameView window = new SerialFrameView();
+			window.open();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * Open the window.
+	 */
+	public void open() {
+		Display display = Display.getDefault();
+		createContents();
+		shlSerialConnect.open();
+		shlSerialConnect.layout();
+		while (!shlSerialConnect.isDisposed()) {
+			if (!display.readAndDispatch()) {
+				display.sleep();
+			}
+		}
+	}
+
+	/**
+	 * Create contents of the window.
+	 */
+	protected void createContents() {
+		shlSerialConnect = new Shell();
+		shlSerialConnect.setSize(375, 286);
+		shlSerialConnect.setText("Serial Connect");
+		
+		Composite composite = new Composite(shlSerialConnect, SWT.BORDER);
+		composite.setBounds(10, 10, 338, 235);
+		
+		Label lblNewLabel = new Label(composite, SWT.BORDER | SWT.CENTER);
+		lblNewLabel.setBounds(10, 10, 313, 15);
+		lblNewLabel.setText("Dados da Comunica\u00E7\u00E3o");
+		
+		Label lblModeloDaPlaca = new Label(composite, SWT.BORDER | SWT.CENTER);
+		lblModeloDaPlaca.setAlignment(SWT.LEFT);
+		lblModeloDaPlaca.setText("Modelo da Placa:");
+		lblModeloDaPlaca.setBounds(10, 41, 122, 15);
+		
+		Label lblBlaudRates = new Label(composite, SWT.BORDER | SWT.CENTER);
+		lblBlaudRates.setText("Taxa de Combina\u00E7\u00E3o:");
+		lblBlaudRates.setAlignment(SWT.LEFT);
+		lblBlaudRates.setBounds(10, 76, 122, 15);
+		
+		Label lblComunicao = new Label(composite, SWT.BORDER | SWT.CENTER);
+		lblComunicao.setText("Status:");
+		lblComunicao.setAlignment(SWT.LEFT);
+		lblComunicao.setBounds(10, 114, 122, 15);
+		
+		Label lblPorta = new Label(composite, SWT.BORDER | SWT.CENTER);
+		lblPorta.setText("Porta:");
+		lblPorta.setAlignment(SWT.LEFT);
+		lblPorta.setBounds(10, 146, 122, 15);
+		
+		Combo comboModeloPlaca = new Combo(composite, SWT.NONE);
+		comboModeloPlaca.setBounds(163, 39, 162, 23);
+		
+		Combo comboPorta = new Combo(composite, SWT.NONE);
+		comboPorta.setBounds(163, 146, 162, 23);
+		
+		Combo comboTaxaCombinacao = new Combo(composite, SWT.NONE);
+		comboTaxaCombinacao.setBounds(163, 74, 162, 23);
+		
+		textStatus = new Text(composite, SWT.BORDER);
+		textStatus.setBounds(163, 112, 102, 21);
+		
+		Label lblLedOn = new Label(composite, SWT.CENTER);
+		lblLedOn.setImage(SWTResourceManager.getImage(SerialFrameView.class, "/Imagens/Gree1.PNG"));
+		lblLedOn.setBounds(271, 103, 55, 37);
+		
+		Button btnBuscarPortas = new Button(composite, SWT.NONE);
+		btnBuscarPortas.setBounds(17, 191, 90, 25);
+		btnBuscarPortas.setText("Buscar Portas");
+		
+		Button btnConectar = new Button(composite, SWT.NONE);
+		btnConectar.setText("Conectar");
+		btnConectar.setBounds(124, 191, 90, 25);
+		
+		Button btnDesconectar = new Button(composite, SWT.NONE);
+		btnDesconectar.setText("Desconectar");
+		btnDesconectar.setBounds(231, 191, 90, 25);
+
+	}
+}

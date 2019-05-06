@@ -1,0 +1,36 @@
+package testes;
+
+import java.util.*;
+import java.io.*;
+
+public class Testes {
+
+	public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int t=in.nextInt();
+
+        int[] result;
+        double dResult=0.0;
+        double k=0.0;
+        
+        //2
+        //0 2 10
+        //5 3 5        
+        result = new int[t];
+        for(int i=1;i<=t;i++){
+            int a = in.nextInt();
+            int b = in.nextInt();
+            int n = in.nextInt();
+            k = i;
+
+            dResult = ((a*i)+((Math.pow(2,k))*b));
+            result[i-1] = (int)dResult;
+            
+        }
+
+        for(int j=0; j<result.length; j++){
+           System.out.printf("%d ", result[j]);            
+        }
+        in.close();
+    }
+}

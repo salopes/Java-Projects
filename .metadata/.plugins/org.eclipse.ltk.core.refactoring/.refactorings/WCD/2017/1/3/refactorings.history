@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 3 packages to &apos;WCD_Processos/src&apos;&#x0D;&#x0A;- Original project: &apos;WCD&apos;&#x0D;&#x0A;- Destination element: &apos;WCD_Processos/src&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     WCD/src/SIBEL&#x0D;&#x0A;     WCD/src/AllRisk&#x0D;&#x0A;     WCD/src/CSI" description="Copy packages" destination="=WCD_Processos/src" element1="/src&lt;SIBEL" element2="/src&lt;AllRisk" element3="/src&lt;CSI" flags="589830" fragments="3" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1485014672544" version="1.0"/>
+</session>

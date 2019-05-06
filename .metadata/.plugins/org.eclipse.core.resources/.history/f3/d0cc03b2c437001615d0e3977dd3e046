@@ -1,0 +1,357 @@
+package DDU;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import DDU.VendasDiretas;
+import DDU.ProcessaVD;
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class Cobranca {
+
+	public static void main(String[] args) {
+
+		int iTotRegistros=0;
+		int iTotLidos=0;
+
+		ArrayList<HeaderCobranca> headerCobranca = new ArrayList<HeaderCobranca>();
+		ArrayList<VendasDiretas> vendasDiretas = new ArrayList<VendasDiretas>();
+		ArrayList<VendasInternet> vendasInternet = new ArrayList<VendasInternet>();
+		ArrayList<VendasGoverno> vendasGoverno = new ArrayList<VendasGoverno>();
+		ArrayList<VeiculosPendentes> veiculosPendentes = new ArrayList<VeiculosPendentes>();
+		ArrayList<DividasPecas> dividasPecas = new ArrayList<DividasPecas>();
+		ArrayList<DividasAutos> dividasAutos = new ArrayList<DividasAutos>();
+		ArrayList<EntregaLiberada> entregaLiberada = new ArrayList<EntregaLiberada>();
+		ArrayList<VendasLeasing> vendasLeasing = new ArrayList<VendasLeasing>();
+		ArrayList<TraillerCobranca> traillerCobranca = new ArrayList<TraillerCobranca>();
+		
+		try{
+			FileReader fileName = new FileReader("D:\\users\\f18867b\\Documents\\TODO List\\SAP AR FULL\\War\\Novo 4\\IF_BR_01_315_20160621-152323-816-OK.TXT");
+			BufferedReader lerArq = new BufferedReader(fileName);
+			String linha = lerArq.readLine(); // lê a primeira linha
+			
+			while (linha != null) {
+				//System.out.printf("%s\n", linha);
+				
+				String tpReg = linha.substring(0, 19);
+				//System.out.printf("%s\n", linha);
+				
+				String tipoRegistro = tpReg.trim();
+				
+				if (tipoRegistro.equals("HEADER")){
+					HeaderCobranca hD = new HeaderCobranca( linha.substring(0, 20)
+                                                          , linha.substring(20, 34)
+                                                          , linha.substring(34, 301));
+					headerCobranca.add(hD);
+				}
+				else if (tipoRegistro.equals("VENDAS DIRETAS")){
+					ProcessaVD processaVD = new ProcessaVD(linha);
+					if(processaVD.iRetVd==1){
+						iTotRegistros++;
+						VendasDiretas vD = new VendasDiretas( linha.substring(0, 20)
+	                                                        , linha.substring(20, 28)
+		                                                    , linha.substring(28, 30)
+		                                                    , linha.substring(30, 60)
+		                                                    , linha.substring(60, 62)
+		                                                    , linha.substring(62, 70)
+		                                                    , linha.substring(70, 100)
+		                                                    , linha.substring(100, 102)
+		                                                    , linha.substring(102, 111)
+		                                                    , linha.substring(111, 122)
+		                                                    , linha.substring(122, 136)
+		                                                    , linha.substring(136, 144)
+		                                                    , linha.substring(144, 152)
+		                                                    , linha.substring(152, 160)
+		                                                    , linha.substring(160, 168)
+		                                                    , linha.substring(168, 173)
+		                                                    , linha.substring(173, 181)
+		                                                    , linha.substring(181, 189)
+		                                                    , linha.substring(189, 219)
+		                                                    , linha.substring(219, 234)
+		                                                    , linha.substring(234, 242)
+		                                                    , linha.substring(242, 244)
+		                                                    , linha.substring(244, 274)
+		                                                    , linha.substring(274, 288)
+		                                                    , linha.substring(288, 289)
+		                                                    , linha.substring(289, 301)
+		                                                    , (linha.substring(62, 70) + linha.substring(102, 111) + linha.substring(20, 28)));
+
+						vendasDiretas.add(vD);	
+					}
+				}
+				else if (tipoRegistro.equals("VENDAS INTERNET")){
+					ProcessaVI processaVI = new ProcessaVI(linha);
+					if(processaVI.iRetVd==1){
+					iTotRegistros++;
+					VendasInternet vI = new VendasInternet( linha.substring(0, 20)
+							, linha.substring(20,28)
+							, linha.substring(28,30)
+							, linha.substring(30,60)
+							, linha.substring(60,62)
+							, linha.substring(62,70)
+							, linha.substring(70,100)
+							, linha.substring(100,109)
+							, linha.substring(109,118)
+							, linha.substring(118,129)
+							, linha.substring(129,143)
+							, linha.substring(143,151)
+							, linha.substring(151,159)
+							, linha.substring(159,167)
+							, linha.substring(167,175)
+							, linha.substring(175,180)
+							, linha.substring(180,188)
+							, linha.substring(188,196)
+							, linha.substring(196,226)
+							, linha.substring(226,241)
+							, linha.substring(241,255)
+							, linha.substring(255,256)
+							, linha.substring(256,301)
+							, (linha.substring(62, 70) + linha.substring(109, 118) + linha.substring(20, 28)));
+
+						vendasInternet.add(vI);	
+					}
+
+				}
+				else if (tipoRegistro.equals("VENDAS GOVERNO")){
+					ProcessaVG processaVG = new ProcessaVG(linha);
+					if(processaVG.iRetVd==1){
+					iTotRegistros++;
+					VendasGoverno vG = new VendasGoverno( linha.substring(0, 20)
+							, linha.substring(20,28)
+							, linha.substring(28,30)
+							, linha.substring(30,60)
+							, linha.substring(60,62)
+							, linha.substring(62,70)
+							, linha.substring(70,100)
+							, linha.substring(100,102)
+							, linha.substring(102,111)
+							, linha.substring(111,122)
+							, linha.substring(122,136)
+							, linha.substring(136,144)
+							, linha.substring(144,152)
+							, linha.substring(152,160)
+							, linha.substring(160,168)
+							, linha.substring(168,183)
+							, linha.substring(183,191)
+							, linha.substring(191,193)
+							, linha.substring(193,223)
+							, linha.substring(223,224)
+							, linha.substring(224,301)
+							, (linha.substring(62, 70) + linha.substring(102, 111) + linha.substring(20, 28)));
+
+						vendasGoverno.add(vG);	
+					}
+
+				}
+				else if (tipoRegistro.equals("VEICULOS PENDENTES")){
+					ProcessaVP processaVP = new ProcessaVP(linha);
+					if(processaVP.iRetVd==1){
+					iTotRegistros++;
+					VeiculosPendentes vP = new VeiculosPendentes( linha.substring(0, 20)
+							, linha.substring(20,28)
+							, linha.substring(28,30)
+							, linha.substring(30,60)
+							, linha.substring(60,62)
+							, linha.substring(62,70)
+							, linha.substring(70,100)
+							, linha.substring(100,109)
+							, linha.substring(109,120)
+							, linha.substring(120,134)
+							, linha.substring(134,142)
+							, linha.substring(142,301)
+							, (linha.substring(62, 70) + linha.substring(100, 109) + linha.substring(20, 28)));
+
+						veiculosPendentes.add(vP);	
+					}					
+				}
+				else if (tipoRegistro.equals("DIVIDAS DE PECAS")){
+					ProcessaDP processaDP = new ProcessaDP(linha);
+					if(processaDP.iRetVd==1){
+					iTotRegistros++;
+					DividasPecas dP = new DividasPecas( linha.substring(0, 20)
+							, linha.substring(20,28)
+							, linha.substring(28,30)
+							, linha.substring(30,60)
+							, linha.substring(60,69)
+							, linha.substring(69,77)
+							, linha.substring(77,85)
+							, linha.substring(85,99)
+							, linha.substring(99,102)
+							, linha.substring(102,105)
+							, linha.substring(105,301)
+							, (linha.substring(20, 28) + linha.substring(60, 69)));
+
+						dividasPecas.add(dP);	
+					}					
+				}
+				else if (tipoRegistro.equals("DIVIDAS DE AUTOS")){
+					ProcessaDA processaDA = new ProcessaDA(linha);
+					if(processaDA.iRetVd==1){
+					iTotRegistros++;
+					DividasAutos dA = new DividasAutos( linha.substring(0, 20)
+							, linha.substring(20,28)
+							, linha.substring(28,30)
+							, linha.substring(30,60)
+							, linha.substring(60,69)
+							, linha.substring(69,80)
+							, linha.substring(80,94)
+							, linha.substring(94,102)
+							, linha.substring(102,110)
+							, linha.substring(110,118)
+							, linha.substring(118,126)
+							, linha.substring(126,301)
+							, (linha.substring(20, 28) + linha.substring(60, 69)));
+
+						dividasAutos.add(dA);	
+					}					
+				}
+				else if (tipoRegistro.equals("ENTREGA LIBERADA")){
+					ProcessaEL processaEL = new ProcessaEL(linha);
+					if(processaEL.iRetVd==1){
+					iTotRegistros++;
+					EntregaLiberada eL = new EntregaLiberada( linha.substring(0, 20)
+							, linha.substring(20,28)
+							, linha.substring(28,30)
+							, linha.substring(30,60)
+							, linha.substring(60,68)
+							, linha.substring(68,70)
+							, linha.substring(70,100)
+							, linha.substring(100,109)
+							, linha.substring(109,120)
+							, linha.substring(120,134)
+							, linha.substring(134,142)
+							, linha.substring(142,150)
+							, linha.substring(150,158)
+							, linha.substring(158,301)
+							, (linha.substring(60, 68)+ linha.substring(100, 109) + linha.substring(20, 28)));
+
+						entregaLiberada.add(eL);	
+					}					
+				}
+				else if (tipoRegistro.equals("VENDAS LEASING")){
+					ProcessaVL processaVL = new ProcessaVL(linha);
+					if(processaVL.iRetVd==1){
+					iTotRegistros++;
+					VendasLeasing vL = new VendasLeasing( linha.substring(0, 20)
+							, linha.substring(20,28)
+							, linha.substring(28,30)
+							, linha.substring(30,39)
+							, linha.substring(39,50)
+							, linha.substring(50,58)
+							, linha.substring(58,72)
+							, linha.substring(72,301)
+							, (linha.substring(20, 28) + linha.substring(30, 39)));
+
+						vendasLeasing.add(vL);	
+					}					
+				}
+				else if (tipoRegistro.equals("TRAILLER")){
+					String sTotRegistros = String.format("%08d", iTotRegistros);
+					//String sTotRegistros = String.format("%08d", vendasDiretas.size());
+					TraillerCobranca tL = new TraillerCobranca( linha.substring(0, 20)
+                                                              , sTotRegistros
+                                                              , linha.substring(28, 301));
+					traillerCobranca.add(tL);
+
+				}
+				
+				linha = lerArq.readLine(); // lê da segunda até a última linha
+			} 
+			
+			iTotLidos = (headerCobranca.size() + traillerCobranca.size() + iTotRegistros);
+
+			System.out.printf("Total de Registros %-20s: [%04d]\n", "HEADER"             , headerCobranca.size());
+			System.out.printf("Total de Registros %-20s: [%04d]\n", "VENDAS DIRETAS"     , vendasDiretas.size());
+			System.out.printf("Total de Registros %-20s: [%04d]\n", "VENDAS INTERNET"    , vendasInternet.size());
+			System.out.printf("Total de Registros %-20s: [%04d]\n", "VENDAS GOVERNO"     , vendasGoverno.size());
+			System.out.printf("Total de Registros %-20s: [%04d]\n", "VEICULOS PENDENTES" , veiculosPendentes.size());
+			System.out.printf("Total de Registros %-20s: [%04d]\n", "DIVIDAS DE PECAS"   , dividasPecas.size());
+			System.out.printf("Total de Registros %-20s: [%04d]\n", "DIVIDAS DE AUTOS"   , dividasAutos.size());
+			System.out.printf("Total de Registros %-20s: [%04d]\n", "ENTREGA LIBERADA"   , entregaLiberada.size());
+			System.out.printf("Total de Registros %-20s: [%04d]\n", "VENDAS LEASING"     , vendasLeasing.size());
+			System.out.printf("Total de Registros %-20s: [%04d]\n", "TRAILLER"           , traillerCobranca.size());
+			System.out.printf("Total de Registros %-20s: [%04d]\n", "REGISTROS LOGICOS"  , iTotRegistros);
+			System.out.printf("Total de Registros %-20s: [%04d]\n", "REGISTROS FISICOS"  , iTotLidos);
+
+			Collections.sort(vendasDiretas);
+
+			FileWriter fileNameOut = new FileWriter("D:\\users\\f18867b\\Documents\\TODO List\\SAP AR FULL\\War\\Novo 4\\IF_BR_01_315_20160621-152323-816-PRG.TXT");
+			PrintWriter gravarArq = new PrintWriter(fileNameOut);
+			
+			//Grava Header
+			for (HeaderCobranca HD : headerCobranca){
+				//System.out.println(HD);
+				gravarArq.printf("%-301s\n", HD);
+			}
+			
+			//Grava VendasDiretas
+			for (VendasDiretas VD : vendasDiretas){
+				//System.out.println(VD);
+				gravarArq.printf("%-301s\n", VD);
+			}
+
+			//Grava VendasInternet
+			for (VendasInternet VI : vendasInternet){
+				//System.out.println(VI);
+				gravarArq.printf("%-301s\n", VI);
+			}
+
+			//Grava VendasGoverno
+			for (VendasGoverno VG : vendasGoverno){
+				//System.out.println(VG);
+				gravarArq.printf("%-301s\n", VG);
+			}
+
+			//Grava VeiculosPendentes
+			for (VeiculosPendentes VP : veiculosPendentes){
+				//System.out.println(VD);
+				gravarArq.printf("%-301s\n", VP);
+			}
+
+			//Grava DividasPecas
+			for (DividasPecas DP : dividasPecas){
+				//System.out.println(DP);
+				gravarArq.printf("%-301s\n", DP);
+			}
+
+			//Grava DividasAutos
+			for (DividasAutos DA : dividasAutos){
+				//System.out.println(DA);
+				gravarArq.printf("%-301s\n", DA);
+			}
+
+			//Grava EntregaLiberada
+			for (EntregaLiberada EP : entregaLiberada){
+				//System.out.println(EP);
+				gravarArq.printf("%-301s\n", EP);
+			}
+
+			//Grava VendasLeasing
+			for (VendasLeasing VL : vendasLeasing){
+				//System.out.println(VL);
+				gravarArq.printf("%-301s\n", VL);
+			}
+			
+			//Grava Trailler
+			for (TraillerCobranca TL : traillerCobranca){
+				//System.out.println(TL);
+				gravarArq.printf("%-301s\n", TL);
+			}
+			
+			// Consultar: vendasDiretas.contains("algo");
+			// Remover: vendasDiretas.remove(contat);
+			
+			fileName.close();
+			fileNameOut.close();
+		} catch (IOException  e) {
+			e.getMessage();
+			System.err.printf("Erro na abertura do arquivo: %s.\n", e.getMessage());
+		}
+		//System.out.println();
+	}
+
+
+}

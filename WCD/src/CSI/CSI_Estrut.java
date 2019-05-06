@@ -1,0 +1,104 @@
+package CSI;
+
+import java.lang.Comparable;
+
+public class CSI_Estrut implements Comparable <CSI_Estrut> {
+
+	String stipoRegistro="";
+	String sDealer="";
+	String sHOt="";
+	String sTMedio="";
+	String sCSISErv="";
+	String sCSI="";
+	String sData="";
+	String CHAVESORT;
+	
+	public CSI_Estrut() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public CSI_Estrut(String stipoRegistro, String sDealer, String sHOt, String sTMedio, String sCSISErv, String sCSI, String sData, String CHAVESORT) {
+		this.stipoRegistro = stipoRegistro;
+		this.sDealer       = sDealer;
+		this.sHOt          = sHOt;
+		this.sTMedio       = sTMedio;
+		this.sCSISErv      = sCSISErv;
+		this.sCSI          = sCSI;
+		this.sData         = sData;
+		this.CHAVESORT     = CHAVESORT;
+	}
+	
+	public String getstipoRegistro() {
+		return stipoRegistro;
+	}
+
+	public void setstipoRegistro(String stipoRegistro){
+	    this.stipoRegistro = stipoRegistro;
+	}
+
+	public String getsDealer() {
+		return sData;
+	}
+
+	public void setsDealer(String sDealer){
+	    this.sDealer = sDealer;
+	}
+	
+	public String getsHOt() {
+		return sHOt;
+	}
+
+	public void setsHOt(String sHOt){
+	    this.sHOt = sHOt;
+	}
+
+	public String getsTMedio() {
+		return sTMedio;
+	}
+
+	public void setsTMedio(String sTMedio){
+	    this.sTMedio = sTMedio;
+	}
+	
+	public String getsCSISErv() {
+		return sCSISErv;
+	}
+
+	public void setsCSISErv(String sCSISErv){
+	    this.sCSISErv = sCSISErv;
+	}
+	
+	public String getsCSI() {
+		return sCSI;
+	}
+
+	public void setsCSI(String sCSI){
+	    this.sCSI = sCSI;
+	}
+
+	public String getsData() {
+		return sData;
+	}
+
+	public void setsData(String sData){
+	    this.sData = sData;
+	}
+
+	public String getCHAVESORT() {
+	    return CHAVESORT;
+	}
+
+	public void setCHAVESORT(String CHAVESORT) {
+	    this.CHAVESORT = CHAVESORT;
+	}	
+	
+	@Override
+	public int compareTo(CSI_Estrut order) {
+			return CHAVESORT.compareTo(order.getCHAVESORT());
+	}	
+	
+	@Override
+	public String toString() {
+		return stipoRegistro + ";" + sDealer + ";" + sHOt + ";" + sTMedio + ";" + sCSISErv + ";" + sCSI + ";" + sData;
+	}
+}

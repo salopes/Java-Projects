@@ -1,0 +1,18 @@
+package DDU;
+
+public class ProcessaDP {
+	String sVendasDiretas="";
+	public int iRetVd=0;
+
+	public ProcessaDP(String Linha) {
+		//Verifica se os registro tupo Numerico sao numericos
+		//Verifica se os registro tupo Numerico sao numericos
+		sVendasDiretas = Linha.substring(20, 30);
+		if (sVendasDiretas.matches("^[0-9]*$")){
+			sVendasDiretas = Linha.substring(60, 99);
+			if (sVendasDiretas.matches("^[0-9]*$")){
+				iRetVd=1;
+			}
+		}
+	}
+}

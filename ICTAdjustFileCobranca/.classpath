@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre1.8.0_111"/>
+	<classpathentry kind="lib" path="D:/Program Files (x86)/eclipse/plugins/org.eclipse.osgi_3.10.101.v20150820-1432.jar" sourcepath="D:/Program Files (x86)/eclipse/plugins/org.eclipse.osgi.source_3.10.101.v20150820-1432.jar"/>
+	<classpathentry kind="lib" path="D:/Program Files (x86)/eclipse/plugins/org.eclipse.core.commands_3.7.0.v20150422-0725.jar" sourcepath="D:/Program Files (x86)/eclipse/plugins/org.eclipse.core.commands.source_3.7.0.v20150422-0725.jar"/>
+	<classpathentry kind="lib" path="D:/Program Files (x86)/eclipse/plugins/org.eclipse.equinox.common_3.7.0.v20150402-1709.jar" sourcepath="D:/Program Files (x86)/eclipse/plugins/org.eclipse.equinox.common.source_3.7.0.v20150402-1709.jar"/>
+	<classpathentry kind="lib" path="D:/Program Files (x86)/eclipse/plugins/org.eclipse.equinox.registry_3.6.0.v20150318-1503.jar" sourcepath="D:/Program Files (x86)/eclipse/plugins/org.eclipse.equinox.registry.source_3.6.0.v20150318-1503.jar"/>
+	<classpathentry kind="lib" path="D:/Program Files (x86)/eclipse/plugins/org.eclipse.core.runtime_3.11.1.v20150903-1804.jar" sourcepath="D:/Program Files (x86)/eclipse/plugins/org.eclipse.core.runtime.source_3.11.1.v20150903-1804.jar"/>
+	<classpathentry kind="lib" path="D:/Program Files (x86)/eclipse/plugins/org.eclipse.text_3.5.400.v20150505-1044.jar" sourcepath="D:/Program Files (x86)/eclipse/plugins/org.eclipse.text.source_3.5.400.v20150505-1044.jar"/>
+	<classpathentry kind="lib" path="D:/Program Files (x86)/eclipse/plugins/org.eclipse.swt.win32.win32.x86_64_3.104.1.v20150825-0743.jar" sourcepath="D:/Program Files (x86)/eclipse/plugins/org.eclipse.swt.win32.win32.x86_64.source_3.104.1.v20150825-0743.jar"/>
+	<classpathentry kind="lib" path="D:/Program Files (x86)/eclipse/plugins/org.eclipse.jface_3.11.0.v20150602-1400.jar" sourcepath="D:/Program Files (x86)/eclipse/plugins/org.eclipse.jface.source_3.11.0.v20150602-1400.jar"/>
+	<classpathentry kind="lib" path="D:/Program Files (x86)/eclipse/plugins/org.eclipse.jface.text_3.10.0.v20150603-1752.jar" sourcepath="D:/Program Files (x86)/eclipse/plugins/org.eclipse.jface.text.source_3.10.0.v20150603-1752.jar"/>
+	<classpathentry kind="lib" path="D:/Program Files (x86)/eclipse/plugins/org.eclipse.ui.workbench_3.107.0.v20150825-2206.jar" sourcepath="D:/Program Files (x86)/eclipse/plugins/org.eclipse.ui.workbench.source_3.107.0.v20150825-2206.jar"/>
+	<classpathentry kind="lib" path="D:/Program Files (x86)/eclipse/plugins/com.ibm.icu_54.1.1.v201501272100.jar" sourcepath="D:/Program Files (x86)/eclipse/plugins/com.ibm.icu.source_54.1.1.v201501272100.jar"/>
+	<classpathentry kind="lib" path="D:/Program Files (x86)/eclipse/plugins/org.eclipse.ui.forms_3.6.200.v20150506-2029.jar" sourcepath="D:/Program Files (x86)/eclipse/plugins/org.eclipse.ui.forms.source_3.6.200.v20150506-2029.jar"/>
+	<classpathentry kind="lib" path="D:/desenv/libs/commons-beanutils-1.9.2.jar"/>
+	<classpathentry kind="lib" path="D:/desenv/libs/commons-beanutils-1.9.2-javadoc.jar"/>
+	<classpathentry kind="lib" path="D:/desenv/libs/commons-beanutils-1.9.2-sources.jar"/>
+	<classpathentry kind="lib" path="D:/desenv/libs/commons-beanutils-1.9.2-tests.jar"/>
+	<classpathentry kind="lib" path="D:/desenv/libs/commons-beanutils-1.9.2-test-sources.jar"/>
+	<classpathentry kind="lib" path="D:/desenv/libs/commons-collections4-4.1.jar"/>
+	<classpathentry kind="lib" path="D:/desenv/libs/commons-collections4-4.1-javadoc.jar"/>
+	<classpathentry kind="lib" path="D:/desenv/libs/commons-lang3-3.4.jar"/>
+	<classpathentry kind="lib" path="D:/desenv/libs/commons-lang3-3.4-javadoc.jar"/>
+	<classpathentry kind="lib" path="D:/desenv/libs/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="D:/desenv/libs/commons-logging-1.2-javadoc.jar"/>
+	<classpathentry kind="lib" path="D:/desenv/libs/commons-net-3.5.jar"/>
+	<classpathentry kind="lib" path="D:/desenv/libs/commons-net-3.5-sources.jar"/>
+	<classpathentry kind="lib" path="D:/desenv/libs/commons-net-examples-3.5.jar"/>
+	<classpathentry kind="lib" path="D:/desenv/libs/flatworm-2.0.1.jar"/>
+	<classpathentry kind="lib" path="D:/desenv/libs/dsn-1.5.6.jar"/>
+	<classpathentry kind="lib" path="D:/desenv/libs/gimap-1.5.6.jar"/>
+	<classpathentry kind="lib" path="D:/desenv/libs/imap-1.5.6.jar"/>
+	<classpathentry kind="lib" path="D:/desenv/libs/javax.mail.jar"/>
+	<classpathentry kind="lib" path="D:/desenv/libs/javax.mail-api-1.5.6.jar"/>
+	<classpathentry kind="lib" path="D:/desenv/libs/logging-mailhandler-1.5.6.jar"/>
+	<classpathentry kind="lib" path="D:/desenv/libs/mailapi-1.5.6.jar"/>
+	<classpathentry kind="lib" path="D:/desenv/libs/pop3-1.5.6.jar"/>
+	<classpathentry kind="lib" path="D:/desenv/libs/smtp-1.5.6.jar"/>
+	<classpathentry kind="lib" path="D:/desenv/libs/commons-email-1.4.jar"/>
+	<classpathentry kind="lib" path="D:/desenv/libs/commons-email-1.4-javadoc.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

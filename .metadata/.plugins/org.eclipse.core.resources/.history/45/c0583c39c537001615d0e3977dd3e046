@@ -1,0 +1,20 @@
+package DDU;
+
+public class ProcessaVL {
+	String sVendasDiretas="";
+	public int iRetVd=0;
+
+	public ProcessaVL(String Linha) {
+		//Verifica se os registro tupo Numerico sao numericos
+		sVendasDiretas = Linha.substring(20, 39);
+		if (sVendasDiretas.matches("^[0-9]*$")){
+			Integer iCodDealer = Integer.parseInt(sVendasDiretas);
+			if(iCodDealer!=0){
+				sVendasDiretas = Linha.substring(50, 72);
+				if (sVendasDiretas.matches("^[0-9]*$")){
+					iRetVd=1;
+				}
+			}
+		}
+	}
+}

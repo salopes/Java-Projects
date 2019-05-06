@@ -1,0 +1,40 @@
+package SIBEL;
+
+public class RedeAtivaSIBEL {
+
+	String CODDEALER;
+	String COD;
+	
+	public RedeAtivaSIBEL() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public RedeAtivaSIBEL(String CODDEALER, String COD) {
+		this.CODDEALER  = CODDEALER ;
+		this.COD  = COD ;
+	}
+	
+	public String getCODDEALER() {
+		return CODDEALER;
+	}
+
+
+	public void setCODDEALER(String CODDEALER){
+	    this.CODDEALER = CODDEALER;
+	}
+
+	public String getCOD() {
+		return COD;
+	}
+
+
+	public void setCOD(String COD){
+	    this.COD = COD;
+	}
+	
+
+	@Override
+	public String toString() {
+		return CODDEALER + COD;
+	}
+}

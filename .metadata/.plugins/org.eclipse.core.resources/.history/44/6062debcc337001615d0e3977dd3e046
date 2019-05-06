@@ -1,0 +1,39 @@
+package DDU;
+
+public class ProcessaVD {
+
+	String sVendasDiretas="";
+	public int iRetVd=0;
+
+	public ProcessaVD(String Linha) {
+		//Verifica se os registro tupo Numerico sao numericos
+		sVendasDiretas = Linha.substring(20, 30);
+		if (sVendasDiretas.matches("^[0-9]*$")){
+			sVendasDiretas = Linha.substring(60, 70);
+			if (sVendasDiretas.matches("^[0-9]*$")){
+				sVendasDiretas = Linha.substring(100, 111);
+				if (sVendasDiretas.matches("^[0-9]*$")){
+					sVendasDiretas = Linha.substring(122, 168);
+					if (sVendasDiretas.matches("^[0-9]*$")){
+						sVendasDiretas = Linha.substring(173, 189);
+						if (sVendasDiretas.matches("^[0-9]*$")){
+							sVendasDiretas = Linha.substring(234, 244);
+							if (sVendasDiretas.matches("^[0-9]*$")){
+								sVendasDiretas = Linha.substring(274, 288);
+								if (sVendasDiretas.matches("^[0-9]*$")){
+									sVendasDiretas = Linha.substring(289, 301);
+									if (sVendasDiretas.matches("^[0-9]*$")){
+										Integer iVendasDiretas = Integer.parseInt(Linha.substring(62, 70));
+										if(iVendasDiretas!=0){
+											iRetVd=1;
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

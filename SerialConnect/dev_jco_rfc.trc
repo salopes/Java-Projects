@@ -1,0 +1,50 @@
+
+**** Error file opened at 20190216 002222 Brasilia Summer Time Rel. 3.0.19 (2018-12-03) [721.1120]
+Error:  >Sat Feb 16 00:22:22,982<    RfcException:
+	message: Connect to SAP gateway failed
+Connection parameters: TYPE=A DEST=SAPConf ASHOST=192.168.225.30 SYSNR=00 PCS=1
+
+LOCATION    CPIC (TCP/IP) on local host with Unicode
+ERROR       partner '192.168.225.30:3300' not reached
+TIME        Sat Feb 16 00:22:22 2019
+RELEASE     721
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -10
+MODULE      nixxi.cpp
+LINE        3289
+DETAIL      NiPConnect2: 192.168.225.30:3300
+SYSTEM CALL connect
+ERRNO       10060
+ERRNO TEXT  WSAETIMEDOUT: Connection timed out
+COUNTER     2
+
+	return code: RFC_FAILURE (1)
+	error group: 102
+	key: RFC_ERROR_COMMUNICATION
+
+
+**** Error file opened at 20190216 133938 Brasilia Summer Time Rel. 3.0.19 (2018-12-03) [721.1120]
+Error:  >Sat Feb 16 13:39:38,686<    RfcException:
+	message: Connect to SAP gateway failed
+Connection parameters: TYPE=A DEST=SAPConf ASHOST=192.168.225.30 SYSNR=00 PCS=1
+
+LOCATION    CPIC (TCP/IP) on local host with Unicode
+ERROR       partner '192.168.225.30:3300' not reached
+TIME        Sat Feb 16 13:39:38 2019
+RELEASE     721
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -10
+MODULE      nixxi.cpp
+LINE        3289
+DETAIL      NiPConnect2: 192.168.225.30:3300
+SYSTEM CALL connect
+ERRNO       10051
+ERRNO TEXT  WSAENETUNREACH: Network is unreachable
+COUNTER     2
+
+	return code: RFC_FAILURE (1)
+	error group: 102
+	key: RFC_ERROR_COMMUNICATION
+

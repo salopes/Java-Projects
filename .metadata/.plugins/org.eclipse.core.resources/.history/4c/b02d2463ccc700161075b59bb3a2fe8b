@@ -1,0 +1,184 @@
+package SIBEL;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.PrintWriter;
+import java.net.SocketException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Date;
+import java.util.GregorianCalendar;
+import java.util.Iterator;
+
+import javax.swing.JFrame;
+import org.apache.commons.net.ftp.FTPClient;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.apache.poi.ss.usermodel.WorkbookFactory;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+
+import org.apache.poi.hssf.usermodel.HSSFCell;
+import org.apache.poi.hssf.usermodel.HSSFRow;
+import org.apache.poi.hssf.usermodel.HSSFSheet;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+public class ProcessaSIBEL {
+
+	public static void main(String[] args) throws SocketException, IOException{
+		int iControle=0, iBase=0;
+		String sDealer="", sDealerAux="", sSQL="", sDataSQL="", sMesSQL="";
+		String tipoRegistro="", sHOt="", sTMedio="", sSIBELSErv="", sSIBEL="", sDataArq="", sKPI="", sValor="";
+
+		String sNomeArquivoAux="", sNomeArquivoAux2="";
+		String sDiretorioENTRADA="", sDiretorioSAIDA = "", sDiretorioRedeAtiva = "", sDiretorioComandoSQL = "";
+		
+		ArrayList<SIBEL_Estrut> sibel_Estrut = new ArrayList<SIBEL_Estrut>();
+		ArrayList<SQLEstrutSIBEL> sqlEstrutSIBEL = new ArrayList<SQLEstrutSIBEL>();
+		ArrayList<RedeAtivaSIBEL> redeAtivaSIBEL = new ArrayList<RedeAtivaSIBEL>();
+
+		try{
+
+			GregorianCalendar gc = new GregorianCalendar();
+			Date dtINIFTP = gc.getTime();
+
+			//System.out.printf("\n");
+	 		System.out.printf("%s\n",dtINIFTP);
+	 		System.out.printf("INICIO Preparação ambiente!\n");
+	 		System.out.printf("\n");
+
+	    	 sDiretorioENTRADA    = "D:\\WCD\\SIBEL\\Entrada\\";
+	    	 sDiretorioSAIDA      = "D:\\WCD\\SIBEL\\Saida\\";
+	    	 sDiretorioRedeAtiva  = "D:\\WCD\\SIBEL\\RedeAtiva\\";
+	    	 sDiretorioComandoSQL = "D:\\WCD\\SIBEL\\SQL\\";
+			
+    	 
+	    	 File DeldiretorioELO2 = new File(sDiretorioSAIDA);
+	    	 if (DeldiretorioELO2.isDirectory()) {
+	    	 	File[] sun = DeldiretorioELO2.listFiles();
+	    	 	for (File toDelete : sun) {
+	    	 		toDelete.delete();
+	    	 	}
+	    	 }
+	    	 File DeldiretorioELO3 = new File(sDiretorioComandoSQL);
+	    	 if (DeldiretorioELO3.isDirectory()) {
+	    	 	File[] sun = DeldiretorioELO3.listFiles();
+	    	 	for (File toDelete : sun) {
+	    	 		toDelete.delete();
+	    	 	}
+	    	 }
+
+	    	Date dtFIMFTP = gc.getTime();
+	 		//System.out.printf("\n");
+	 		System.out.printf("%s\n",dtFIMFTP);
+	 		System.out.printf("FIM Preparação ambiente!\n");
+	 		System.out.printf("\n");
+			
+	 		Date dtINI = gc.getTime();
+	 		System.out.printf("%s\n",dtINI);
+	 		System.out.printf("INICIO Processamento!\n");
+
+// Faz a leitura Rede Ativa			
+	 		
+			FileReader fileRedeAtiva = new FileReader(sDiretorioRedeAtiva + "RedeAtiva.txt");
+			BufferedReader lerRedeAtiva = new BufferedReader(fileRedeAtiva);
+			String linhaRedeAtiva = lerRedeAtiva.readLine(); // lê a primeira linha
+
+			while (linhaRedeAtiva != null) {
+				//System.out.printf("%s\n", linhaRedeAtivaTam);
+				RedeAtivaSIBEL RATV = new RedeAtivaSIBEL(linhaRedeAtiva.substring(0, 5), linhaRedeAtiva.substring(6, 11));
+				redeAtivaSIBEL.add(RATV);
+				linhaRedeAtiva = lerRedeAtiva.readLine(); // lê da segunda até a última linha
+			}
+			fileRedeAtiva.close();
+
+			File arquivosELO[];
+			File diretorioELO = new File(sDiretorioENTRADA);
+			arquivosELO = diretorioELO.listFiles();
+
+			for(int w = 0; w < arquivosELO.length; w++){
+				sNomeArquivoAux = arquivosELO[w].getName();
+				sNomeArquivoAux2 = sDiretorioENTRADA + sNomeArquivoAux;
+				System.out.printf("Planilhas: [%s]\n", sNomeArquivoAux2);
+
+				FileInputStream fisPlanilha = null;
+				fisPlanilha = new FileInputStream(sNomeArquivoAux2);
+				
+				XSSFWorkbook workbook = new XSSFWorkbook(fisPlanilha);
+				XSSFSheet sheet = workbook.getSheetAt(1);
+				
+////
+//				InputStream fisPlanilha = new FileInputStream(sNomeArquivoAux2);
+//				XSSFWorkbook  wb = new XSSFWorkbook(ExcelFileToRead);
+				
+//				XSSFSheet sheet = wb.getSheetAt(0);
+//				XSSFRow row; 
+//				XSSFCell cell;
+
+				Iterator<Row> rowIterator = sheet.iterator();
+//				Iterator rows = sheet.rowIterator();
+				
+				while(rowIterator.hasNext()){
+					//Faz a leitura da linha
+					System.out.printf("Linha: [%s]\n", rowIterator.toString());
+					
+					Row row =  rowIterator.next();
+					
+					//Faz a leitura das Celulas da linha
+					Iterator<Cell> cellIterator = row.iterator();
+					
+					while(cellIterator.hasNext()){
+						System.out.printf("Celula: [%s]\n", cellIterator.toString());
+						Cell cell =  cellIterator.next();
+						
+					}
+					
+				}
+
+/*				
+				while (rows.hasNext())
+				{
+					row=(XSSFRow) rows.next();
+					Iterator cells = row.cellIterator();
+					while (cells.hasNext())
+					{
+						cell=(XSSFCell) cells.next();
+				
+						if (cell.getCellType() == XSSFCell.CELL_TYPE_STRING)
+						{
+							System.out.print(cell.getStringCellValue()+" ");
+						}
+						else if(cell.getCellType() == XSSFCell.CELL_TYPE_NUMERIC)
+						{
+							System.out.print(cell.getNumericCellValue()+" ");
+						}
+						else
+						{
+							//U Can Handel Boolean, Formula, Errors
+						}
+					}
+					System.out.println();
+				}				
+*/				
+				fisPlanilha.close();
+				workbook.close();
+		
+			}			
+		
+		} catch (IOException  e) {
+			e.getMessage();
+			System.err.printf("Erro na abertura do arquivo: %s.\n", e.getMessage());
+		}
+	}
+}

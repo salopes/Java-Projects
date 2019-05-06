@@ -1,0 +1,47 @@
+package AllRisk;
+
+public class AllRisk_Estrut {
+
+	String  sData="";
+	String  sDealer="";
+	Integer iOcorrencias=0;
+	
+	public AllRisk_Estrut() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public AllRisk_Estrut(String sData, String sDealer, Integer iOcorrencias) {
+		this.sData        = sData ;
+		this.sDealer      = sDealer ;
+		this.iOcorrencias = iOcorrencias ;
+	}
+	
+	public String getsData() {
+		return sData;
+	}
+
+	public void setsData(String sData){
+	    this.sData = sData;
+	}
+
+	public String getsDealer() {
+		return sData;
+	}
+
+	public void setsDealer(String sDealer){
+	    this.sDealer = sDealer;
+	}
+
+	public Integer getiOcorrencias() {
+		return iOcorrencias;
+	}
+
+	public void setiOcorrencias(Integer iOcorrencias){
+	    this.iOcorrencias = iOcorrencias;
+	}
+	
+	@Override
+	public String toString() {
+		return sData + ";" + sDealer + ";" + iOcorrencias;
+	}
+}

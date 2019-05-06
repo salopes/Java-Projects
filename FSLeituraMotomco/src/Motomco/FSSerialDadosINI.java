@@ -1,0 +1,114 @@
+package Motomco;
+
+public class FSSerialDadosINI{
+
+	String NOMEPORTA= "", RATE = "", TIMEOUT = "",  ASHOST = "", SYSNR = "", CLIENT = "", USER = "", PASSWD = "", LANG = "", TP_BALANCA = "", ROUTER = "";
+	
+	public FSSerialDadosINI() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public FSSerialDadosINI(String NOMEPORTA, String RATE, String TIMEOUT, String ASHOST, String SYSNR, String CLIENT, String USER, String PASSWD, String LANG, String TP_BALANCA, String ROUTER){
+		this.NOMEPORTA = NOMEPORTA;
+		this.RATE      = RATE;
+		this.TIMEOUT   = TIMEOUT;
+		this.ASHOST    = ASHOST;
+		this.SYSNR     = SYSNR;
+		this.CLIENT    = CLIENT;
+		this.USER      = USER;
+		this.PASSWD    = PASSWD;
+		this.LANG      = LANG;
+		this.LANG      = TP_BALANCA;
+		this.ROUTER    = ROUTER;
+	}
+
+	public String getNOMEPORTA() {
+		return NOMEPORTA;
+	}
+
+	public void setNOMEPORTA(String NOMEPORTA) {
+		this.NOMEPORTA = NOMEPORTA;
+	}
+
+	public String getRATE() {
+		return RATE;
+	}
+
+	public void setRATE(String RATE) {
+		this.RATE = RATE;
+	}
+
+	public String getTIMEOUT() {
+		return TIMEOUT;
+	}
+
+	public void setTIMEOUT(String TIMEOUT) {
+		this.TIMEOUT = TIMEOUT;
+	}
+
+	public String getASHOST() {
+		return ASHOST;
+	}
+
+	public void setASHOST(String ASHOST) {
+		this.ASHOST = ASHOST;
+	}
+
+
+	public String getSYSNR() {
+		return SYSNR;
+	}
+
+	public void setSYSNR(String SYSNR) {
+		this.SYSNR = SYSNR;
+	}
+
+	public String getCLIENT() {
+		return CLIENT;
+	}
+
+	public void setCLIENT(String CLIENT) {
+		this.CLIENT = CLIENT;
+	}
+
+	public String getUSER() {
+		return USER;
+	}
+
+	public void setUSER(String USER) {
+		this.USER = USER;
+	}
+
+	public String getPASSWD() {
+		return PASSWD;
+	}
+
+	public void setPASSWD(String PASSWD) {
+		this.PASSWD = PASSWD;
+	}
+
+	public String getLANG() {
+		return LANG;
+	}
+
+	public void setLANG(String LANG) {
+		this.LANG = LANG;
+	}
+
+	public String getTP_BALANCA() {
+		return TP_BALANCA;
+	}
+
+	public void setTP_BALANCA(String TP_BALANCA) {
+		this.TP_BALANCA = TP_BALANCA;
+	}
+
+	public String getROUTER() {
+		return ROUTER;
+	}
+
+	public void setROUTER(String ROUTER) {
+		this.ROUTER = ROUTER;
+	}
+
+}

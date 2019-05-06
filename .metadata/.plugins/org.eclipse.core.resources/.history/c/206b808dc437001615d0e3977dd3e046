@@ -1,0 +1,20 @@
+package DDU;
+
+public class ProcessaDA {
+	String sVendasDiretas="";
+	public int iRetVd=0;
+
+	public ProcessaDA(String Linha) {
+		//Verifica se os registro tupo Numerico sao numericos
+		sVendasDiretas = Linha.substring(20, 30);
+		if (sVendasDiretas.matches("^[0-9]*$")){
+			sVendasDiretas = Linha.substring(60, 69);
+			if (sVendasDiretas.matches("^[0-9]*$")){
+				sVendasDiretas = Linha.substring(80, 126);
+				if (sVendasDiretas.matches("^[0-9]*$")){
+					iRetVd=1;
+				}
+			}
+		}
+	}
+}

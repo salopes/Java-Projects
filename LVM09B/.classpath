@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre1.8.0_92"/>
+	<classpathentry kind="lib" path="D:/desenv/libs/commons-beanutils-1.9.2.jar"/>
+	<classpathentry kind="lib" path="D:/desenv/libs/commons-beanutils-1.9.2-javadoc.jar"/>
+	<classpathentry kind="lib" path="D:/desenv/libs/commons-beanutils-1.9.2-sources.jar"/>
+	<classpathentry kind="lib" path="D:/desenv/libs/commons-beanutils-1.9.2-tests.jar"/>
+	<classpathentry kind="lib" path="D:/desenv/libs/commons-beanutils-1.9.2-test-sources.jar"/>
+	<classpathentry kind="lib" path="D:/desenv/libs/commons-collections4-4.1.jar"/>
+	<classpathentry kind="lib" path="D:/desenv/libs/commons-collections4-4.1-javadoc.jar"/>
+	<classpathentry kind="lib" path="D:/desenv/libs/commons-lang3-3.4.jar"/>
+	<classpathentry kind="lib" path="D:/desenv/libs/commons-lang3-3.4-javadoc.jar"/>
+	<classpathentry kind="lib" path="D:/desenv/libs/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="D:/desenv/libs/commons-logging-1.2-javadoc.jar"/>
+	<classpathentry kind="lib" path="D:/desenv/libs/commons-net-3.5.jar"/>
+	<classpathentry kind="lib" path="D:/desenv/libs/commons-net-3.5-sources.jar"/>
+	<classpathentry kind="lib" path="D:/desenv/libs/commons-net-examples-3.5.jar"/>
+	<classpathentry kind="lib" path="D:/desenv/libs/flatworm-2.0.1.jar"/>
+	<classpathentry kind="lib" path="D:/Program Files/IBM/WebSphere MQ/java/lib/com.ibm.mq.allclient.jar"/>
+	<classpathentry kind="lib" path="D:/Program Files/IBM/WebSphere MQ/java/lib/com.ibm.mq.axis2.jar"/>
+	<classpathentry kind="lib" path="D:/Program Files/IBM/WebSphere MQ/java/lib/com.ibm.mq.commonservices.jar"/>
+	<classpathentry kind="lib" path="D:/Program Files/IBM/WebSphere MQ/java/lib/com.ibm.mq.defaultconfig.jar"/>
+	<classpathentry kind="lib" path="D:/Program Files/IBM/WebSphere MQ/java/lib/com.ibm.mq.headers.jar"/>
+	<classpathentry kind="lib" path="D:/Program Files/IBM/WebSphere MQ/java/lib/com.ibm.mq.jar"/>
+	<classpathentry kind="lib" path="D:/Program Files/IBM/WebSphere MQ/java/lib/com.ibm.mq.jmqi.jar"/>
+	<classpathentry kind="lib" path="D:/Program Files/IBM/WebSphere MQ/java/lib/com.ibm.mq.jms.Nojndi.jar"/>
+	<classpathentry kind="lib" path="D:/Program Files/IBM/WebSphere MQ/java/lib/com.ibm.mq.pcf.jar"/>
+	<classpathentry kind="lib" path="D:/Program Files/IBM/WebSphere MQ/java/lib/com.ibm.mq.postcard.jar"/>
+	<classpathentry kind="lib" path="D:/Program Files/IBM/WebSphere MQ/java/lib/com.ibm.mq.soap.jar"/>
+	<classpathentry kind="lib" path="D:/Program Files/IBM/WebSphere MQ/java/lib/com.ibm.mq.tools.ras.jar"/>
+	<classpathentry kind="lib" path="D:/Program Files/IBM/WebSphere MQ/java/lib/com.ibm.mq.traceControl.jar"/>
+	<classpathentry kind="lib" path="D:/Program Files/IBM/WebSphere MQ/java/lib/com.ibm.mqjms.jar"/>
+	<classpathentry kind="lib" path="D:/Program Files/IBM/WebSphere MQ/java/lib/fscontext.jar"/>
+	<classpathentry kind="lib" path="D:/Program Files/IBM/WebSphere MQ/java/lib/jms.jar"/>
+	<classpathentry kind="lib" path="D:/Program Files/IBM/WebSphere MQ/java/lib/providerutil.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre1.8.0_111"/>
+	<classpathentry kind="lib" path="D:/desenv/libs/commons-beanutils-1.9.2.jar"/>
+	<classpathentry kind="lib" path="D:/desenv/libs/commons-beanutils-1.9.2-javadoc.jar"/>
+	<classpathentry kind="lib" path="D:/desenv/libs/commons-beanutils-1.9.2-sources.jar"/>
+	<classpathentry kind="lib" path="D:/desenv/libs/commons-beanutils-1.9.2-tests.jar"/>
+	<classpathentry kind="lib" path="D:/desenv/libs/commons-beanutils-1.9.2-test-sources.jar"/>
+	<classpathentry kind="lib" path="D:/desenv/libs/commons-collections4-4.1.jar"/>
+	<classpathentry kind="lib" path="D:/desenv/libs/commons-collections4-4.1-javadoc.jar"/>
+	<classpathentry kind="lib" path="D:/desenv/libs/commons-email-1.4.jar"/>
+	<classpathentry kind="lib" path="D:/desenv/libs/commons-email-1.4-javadoc.jar"/>
+	<classpathentry kind="lib" path="D:/desenv/libs/commons-lang3-3.4.jar"/>
+	<classpathentry kind="lib" path="D:/desenv/libs/commons-lang3-3.4-javadoc.jar"/>
+	<classpathentry kind="lib" path="D:/desenv/libs/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="D:/desenv/libs/commons-logging-1.2-javadoc.jar"/>
+	<classpathentry kind="lib" path="D:/desenv/libs/commons-net-3.5.jar"/>
+	<classpathentry kind="lib" path="D:/desenv/libs/commons-net-3.5-sources.jar"/>
+	<classpathentry kind="lib" path="D:/desenv/libs/commons-net-examples-3.5.jar"/>
+	<classpathentry kind="lib" path="D:/desenv/libs/dsn-1.5.6.jar"/>
+	<classpathentry kind="lib" path="D:/desenv/libs/flatworm-2.0.1.jar"/>
+	<classpathentry kind="lib" path="D:/desenv/libs/gimap-1.5.6.jar"/>
+	<classpathentry kind="lib" path="D:/desenv/libs/imap-1.5.6.jar"/>
+	<classpathentry kind="lib" path="D:/desenv/libs/javax.mail.jar"/>
+	<classpathentry kind="lib" path="D:/desenv/libs/javax.mail-api-1.5.6.jar"/>
+	<classpathentry kind="lib" path="D:/desenv/libs/logging-mailhandler-1.5.6.jar"/>
+	<classpathentry kind="lib" path="D:/desenv/libs/mailapi-1.5.6.jar"/>
+	<classpathentry kind="lib" path="D:/desenv/libs/pop3-1.5.6.jar"/>
+	<classpathentry kind="lib" path="D:/desenv/libs/smtp-1.5.6.jar"/>
+	<classpathentry kind="lib" path="D:/desenv/commons-net-3.5/commons-net-3.5.jar"/>
+	<classpathentry kind="lib" path="D:/desenv/commons-net-3.5/commons-net-3.5-sources.jar"/>
+	<classpathentry kind="lib" path="D:/desenv/commons-net-3.5/commons-net-examples-3.5.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
